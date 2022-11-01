@@ -26,9 +26,16 @@
       }
     }
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "react-hooks"],
   "rules": {
     "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "useRecoilCallback"
+      }
+    ],
     "consistent-return": "off",
     "max-len": ["error", { "code": 100, "ignoreTemplateLiterals": true }],
     "radix": ["error", "as-needed"],
