@@ -45,6 +45,7 @@
     "no-unused-vars": "off",
     "no-useless-catch": "off",
     "import/no-cycle": "off",
+    "import/extensions": "off",
     "arrow-body-style": "off",
     "curly": "error",
     "no-console": "off",
