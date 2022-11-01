@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { useCallback, useEffect, useState } from 'react';
 
 const bodyStyle = () => css`
   height: 500px;
@@ -6,7 +7,28 @@ const bodyStyle = () => css`
 `;
 
 const MainPage = () => {
-  return <div css={bodyStyle}>MainPage</div>;
+  // useState
+  const [isError, setIsError] = useState<boolean>(false);
+
+  // handler
+  const onClickButton = useCallback(() => {
+    setIsError(true);
+  }, []);
+
+  // useEffect
+  useEffect(() => {
+    if (isError) {
+      throw new Error('test');
+    }
+  }, [isError]);
+
+  return (
+    <div css={bodyStyle}>
+      <button type="button" onClick={onClickButton}>
+        에러 발생
+      </button>
+    </div>
+  );
 };
 
 export default MainPage;

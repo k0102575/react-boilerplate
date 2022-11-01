@@ -5,6 +5,7 @@ import NotFoundPage from './components/ErrorPage/NotFoundPage';
 import Container from './features/Layout/Container';
 import MainRoutes from './features/Home/Routes';
 import ProductRoutes from './features/Product/Routes';
+import ErrorBoundary from './features/Layout/ErrorBoundary';
 
 const App = () => {
   // react query
@@ -13,13 +14,15 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
-        <Routes>
-          <Route element={<Container />}>
-            <Route index element={<MainRoutes />} />
-            <Route path="product/*" element={<ProductRoutes />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
+        <ErrorBoundary>
+          <Routes>
+            <Route element={<Container />}>
+              <Route index element={<MainRoutes />} />
+              <Route path="product/*" element={<ProductRoutes />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Route>
+          </Routes>
+        </ErrorBoundary>
       </RecoilRoot>
     </QueryClientProvider>
   );
