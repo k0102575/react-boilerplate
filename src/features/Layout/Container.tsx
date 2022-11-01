@@ -5,7 +5,7 @@ import Header from './Header';
 /*
   Component
 */
-const GlobalLayout = () => {
+const Container = () => {
   return (
     <>
       <Header />
@@ -17,4 +17,4 @@ const GlobalLayout = () => {
   );
 };
 
-export default GlobalLayout;
+export default Container;
