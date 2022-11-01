@@ -28,6 +28,7 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
     "consistent-return": "off",
     "max-len": ["error", { "code": 100, "ignoreTemplateLiterals": true }],
     "radix": ["error", "as-needed"],
